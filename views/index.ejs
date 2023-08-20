@@ -13,6 +13,36 @@
 <h1>Our Wordle Stats</h1>
 <p>We have solved <%= info.length %> Wordles together.</p>
 <p>Christina has taken a total of <%= info.reduce((acc, cur) => acc + cur['christina'], 0) %> guesses and Fet has taken <%= info.reduce((acc, cur) => acc + cur['fet'], 0) %> guesses.</p>
+<!-- TODO: Probably make this a table rather than a bunch of divs, and the headers will go where they're supposed to be-->
+<div class="container">
+    <div class="headers">
+        <div>Christina</div>
+        <div>Fet</div>
+        <div>Solution</div>
+        <div>Guesses</div>
+    </div>
+    <% for (let entry of info) {%>
+        <div class="row">
+            <div class="me">
+                <% for (let arr of entry.cStarter) {%>
+                    <span class=<%= arr[1]%>><%= arr[0] %></span>
+                <% } %>
+            </div>
+            <div class="fet">
+                <% for (let arr of entry.fStarter) {%>
+                    <span class=<%= arr[1]%>><%= arr[0] %></span>
+                <% } %>
+            </div>
+            <div class="solution">
+                <%= entry.solution %>
+            </div>
+            <div class="guesses">
+                <%= entry.christina %> / <%= entry.fet %>
+            </div>
+        </div>
+    <% } %>
+
+</div>
 
 
 </body>

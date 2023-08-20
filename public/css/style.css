@@ -1,0 +1,50 @@
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.row, .headers {
+    display: flex;
+}
+.row {
+    margin-bottom: 0.5%;
+}
+.headers {
+    margin-bottom: 1%;
+}
+
+
+.row > div, .headers > div {
+    width: 10em;
+}
+
+.me, .fet {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.me > span, .fet > span {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.yellow {
+    background-color: rgb(181, 159, 59);
+}
+
+.green {
+    background-color: rgb(83, 141, 78);
+}
+
+.grey {
+    background-color: rgb(58, 58, 60);
+}
+

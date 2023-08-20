@@ -12,24 +12,24 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const path = require('path')
 /* Routes init goes here */
-
+ 
 // Config
 require('dotenv').config({path: path.resolve('config.env')})
 
 // Passport
 require('./config/passport')(passport)
-
+  
 // Connect the DB
 connectDB() 
-
+       
 // More setup
-
+  
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))
-
+  
 // Sessions
 app.use(
     session({
@@ -40,7 +40,7 @@ app.use(
       store: MongoStore.create({ mongoUrl: process.env.DB_STRING }),
     })
   )
-   
+  
 // Passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
