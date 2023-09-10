@@ -2,30 +2,31 @@ body {
     font-family: sans-serif;
 }
 
-.container {
+body, html {
+    margin: 0;
+}
+
+table {
     width: 50%;
     margin: 0 auto;
 }
 
-.row, .headers {
-    display: flex;
-}
-.row {
-    margin-bottom: 0.5%;
-}
-.headers {
-    margin-bottom: 1%;
-}
-
-
-.row > div, .headers > div {
-    width: 10em;
+td {
+    text-align: center;
 }
 
 .me, .fet {
     font-size: 24px;
     font-weight: 500;
     color: #fff;
+}
+
+.teal {
+    color: rgb(7, 97, 97);
+}
+
+.fab {
+    color: rgb(214, 93, 113);
 }
 
 .me > span, .fet > span {
@@ -46,5 +47,30 @@ body {
 
 .grey {
     background-color: rgb(58, 58, 60);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    background-color: rgb(58, 58, 60);
+    margin: 0;
+    color: #fff;
+    margin-bottom: 2%;
+    padding: 0.5%;
+}
+
+span > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+span > a:visited {
+    color: #fff;
+}
+
+nav > span {
+    display: inline-block;
+    font-size: 20px;
 }
 

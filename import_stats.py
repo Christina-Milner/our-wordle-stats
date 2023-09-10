@@ -16,6 +16,6 @@ def csv_to_json(filename):
     return data.to_dict('records')
 
 
-collection.insert_many(csv_to_json('wordle.csv'))
+collection.insert_many(csv_to_json('wordle2.csv'))
 
 

@@ -10,39 +10,48 @@
 </head>
 
 <body>
-<h1>Our Wordle Stats</h1>
-<p>We have solved <%= info.length %> Wordles together.</p>
-<p>Christina has taken a total of <%= info.reduce((acc, cur) => acc + cur['christina'], 0) %> guesses and Fet has taken <%= info.reduce((acc, cur) => acc + cur['fet'], 0) %> guesses.</p>
-<!-- TODO: Probably make this a table rather than a bunch of divs, and the headers will go where they're supposed to be-->
-<div class="container">
-    <div class="headers">
-        <div>Christina</div>
-        <div>Fet</div>
-        <div>Solution</div>
-        <div>Guesses</div>
-    </div>
+<!-- To do: Separate guesses column out into me, Fet, winner
+    Make table sortable by click on Number or guesses-->
+<%- include('partials/nav.ejs') %>
+<table>
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th class="teal">Christina</th>
+            <th class="fab">Fet</th>
+            <th>Solution</th>
+            <th>Guesses</th>
+        </tr>
+    </thead>
+    <tbody>
     <% for (let entry of info) {%>
-        <div class="row">
-            <div class="me">
+        <tr>
+            <td class="number">
+                <%= entry.num %>
+            </td>
+            <td class="me">
                 <% for (let arr of entry.cStarter) {%>
                     <span class=<%= arr[1]%>><%= arr[0] %></span>
                 <% } %>
-            </div>
-            <div class="fet">
+            </td>
+            <td class="fet">
                 <% for (let arr of entry.fStarter) {%>
                     <span class=<%= arr[1]%>><%= arr[0] %></span>
                 <% } %>
-            </div>
-            <div class="solution">
+            </td>
+            <td class="solution">
                 <%= entry.solution %>
-            </div>
-            <div class="guesses">
+            </td>
+            <td class="guesses">
+                <span class=<%= entry.christina < entry.fet ? "teal" : entry.fet < entry.christina ? "fab" : ""%>>
                 <%= entry.christina %> / <%= entry.fet %>
-            </div>
-        </div>
+                </span>
+            </td>
+        </tr>
     <% } %>
+    </tbody>
 
-</div>
+</table>
 
 
 </body>

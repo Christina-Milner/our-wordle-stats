@@ -1,6 +1,7 @@
 .gitignore
 node_modules
 wordle.csv
+wordle2.csv
 
 
 # dotenv environment variable files

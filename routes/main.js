@@ -6,6 +6,8 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 // Simple stuff
 router.get('/', homeController.getIndex)
+router.get('/about', homeController.getAbout)
+router.get('/stats', homeController.getStats)
 
 
 

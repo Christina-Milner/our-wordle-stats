@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wordle Stats</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+<%- include('partials/nav.ejs') %>
+
+<h1>Our Wordle Stats</h1>
+<p>We have solved <%= info.length %> Wordles together.</p>
+<p>Christina has taken a total of <%= info.reduce((acc, cur) => acc + cur['christina'], 0) %> guesses and Fet has taken <%= info.reduce((acc, cur) => acc + cur['fet'], 0) %> guesses.</p>
+
+<!-- To do:
+    - Average guesses (total, separated by LEAST and CRANE)
+    - Best first guess (CRANE for me, best 5 or so best starters for Fet)
+    - How many words failed (plus random selection of 5 or so)
+    - Maybe what letters are most prominent in words with low guesses vs high guesses? -->
+
+</body>
+</html>
